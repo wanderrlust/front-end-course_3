@@ -10,7 +10,11 @@ export default function Layout() {
 							Home
 						</NavLink>
 					</li>
-
+					<li className="nav-item">
+						<NavLink className="nav-link" to="/users">
+							Users
+						</NavLink>
+					</li>
 				</ul>
 			</header>
 
