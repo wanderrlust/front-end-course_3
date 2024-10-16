@@ -6,6 +6,8 @@ import "./Styles.css";
 import Home from "./pages/Home";
 import Users from "./pages/Users";
 import Layout from "./components/Layout";
+import UserDetails from "./pages/UserDetails";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 function App() {
@@ -15,6 +17,8 @@ function App() {
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
 					<Route path="users" element={<Users />} />
+					<Route path="user/:id" element={<UserDetails />} />
+					<Route path="*" element={<NotFoundPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
