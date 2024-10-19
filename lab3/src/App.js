@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import "./reset.css";
+import "./Style.css";
 
 const ThemeContext = React.createContext(null);
 
