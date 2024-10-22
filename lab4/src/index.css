@@ -1,0 +1,53 @@
+h2 {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 36px;
+}
+
+.forma {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.inputs-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+#btn-add {
+    align-self: flex-end;
+}
+textarea {
+    width: 400px;
+    resize: vertical;
+}
+
+.tasks-list {
+    width: 600px;
+}
+.tasks-list li {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    column-gap: 50px;
+    justify-content: space-between;
+}
+
+.task-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.task-text {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+.btn-remove {
+    padding: 5px;
+    max-height: 50px;
+    align-self: center;
+}
