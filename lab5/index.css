@@ -52,3 +52,29 @@ section:first-child {
 	transform: scale(1.5) rotate(45deg);
 	transition: transform 0.5s;
 }
+
+/* ============================ TASK 3 */
+
+.animate-box {
+	margin: 0 auto;
+	width: 200px;
+	height: 100px;
+	background-color: cornflowerblue;
+	opacity: 0;
+	position: relative;
+	animation-name: slideIn;
+	animation-duration: 1.5s;
+	animation-delay: 0.3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(-400%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
