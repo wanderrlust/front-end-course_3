@@ -1,0 +1,40 @@
+section {
+	margin: 50px 0;
+	position: relative;
+}
+section:first-child {
+	margin-top: 0;
+}
+.task-title {
+	background-color: #bbb;
+	font-size: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	margin-bottom: 20px;
+}
+.task-content {
+	padding: 20px 100px;
+}
+
+/* ============================ TASK 1 */
+
+#btn-task1 {
+	margin: 0 50%;
+	transform: translateX(-50%);
+	font-size: 24px;
+	padding: 15px 30px;
+	background-color: #68bcf5;
+}
+#btn-task1::before {
+	content: attr(text);
+}
+#btn-task1:hover::before {
+	content: attr(hover-text);
+	transition-delay: 0.5s;
+}
+#btn-task1:hover {
+	background-color: rgb(59, 225, 18);
+	transition-delay: 0.5s;
+}
