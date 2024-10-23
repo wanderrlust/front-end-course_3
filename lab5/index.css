@@ -38,3 +38,17 @@ section:first-child {
 	background-color: rgb(59, 225, 18);
 	transition-delay: 0.5s;
 }
+
+/* ============================ TASK 2 */
+
+.square {
+	width: 200px;
+	height: 200px;
+	background-color: #ebb617;
+	margin: 80px auto;
+	transition: transform 0.5s;
+}
+.square:hover {
+	transform: scale(1.5) rotate(45deg);
+	transition: transform 0.5s;
+}
