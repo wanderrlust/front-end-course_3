@@ -21,9 +21,9 @@ section:first-child {
 /* ============================ TASK 1 */
 
 .task1-wrap {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
+	display: flex;
+	justify-content: center;
+	justify-items: center;
 }
 #btn-task1 {
 	font-size: 24px;
@@ -44,21 +44,21 @@ section:first-child {
 
 /* ============================ TASK 2 */
 
-.square {
+.task2-square {
 	width: 200px;
 	height: 200px;
 	background-color: #ebb617;
 	margin: 80px auto;
 	transition: transform 0.5s;
 }
-.square:hover {
+.task2-square:hover {
 	transform: scale(1.5) rotate(45deg);
 	transition: transform 0.5s;
 }
 
 /* ============================ TASK 3 */
 
-.animate-box {
+.task3-animate-box {
 	margin: 0 auto;
 	width: 200px;
 	height: 100px;
@@ -84,15 +84,15 @@ section:first-child {
 
 /* ============================ TASK 4 */
 
-#container {
+#task4-container {
 	width: 200px;
 	height: 200px;
 	position: relative;
 	margin: 0 auto;
 	border-radius: 50%;
-	border: 4px solid #000;
+	border: 2px dashed #000;
 }
-#circle {
+#task4-circle {
 	width: 100px;
 	height: 100px;
 	background-color: red;
@@ -125,5 +125,64 @@ section:first-child {
 	}
 	100% {
 		background-color: red;
+	}
+}
+
+/* ============================ TASK 5 */
+
+.task5-wrap {
+	margin: 100px 0 50px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.task5-square {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	animation: transformSequence1 7s ease-in-out infinite;
+}
+.task5-square-second {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	animation: transformSequence2 7s ease-in-out infinite;
+}
+
+@keyframes transformSequence1 {
+	0% {
+		background-color: red;
+		transform: scale(1) rotate(0deg);
+	}
+
+	50% {
+		background-color: green;
+		transform: scale(2) rotate(0deg);
+	}
+
+	100% {
+		background-color: green;
+		transform: scale(1) rotate(180deg);
+	}
+}
+@keyframes transformSequence2 {
+	0% {
+		background-color: red;
+		transform: scale(1) rotate(0deg);
+	}
+
+	33% {
+		background-color: green;
+		transform: scale(1) rotate(0deg);
+	}
+
+	66% {
+		background-color: green;
+		transform: scale(2) rotate(0deg);
+	}
+
+	100% {
+		background-color: green;
+		transform: scale(1) rotate(180deg);
 	}
 }
