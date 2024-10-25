@@ -63,3 +63,28 @@ section:first-child {
 	left: 80%;
 	border-radius: 50%;
 }
+
+/* ====================================== TASK 3 */
+
+.task3-wrap {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.task3-box {
+	width: 100px;
+	height: 100px;
+	border-radius: 30%;
+}
+
+.task3-btns {
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+}
+
+.task3-btn {
+	padding: 10px 20px;
+}
