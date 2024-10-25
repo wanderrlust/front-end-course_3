@@ -21,9 +21,45 @@ section:first-child {
 /* ====================================== TASK 1 */
 
 .box {
-    margin: 50px auto;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    transform-origin: center;
+	margin: 50px auto;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	transform-origin: center;
+}
+
+/* ====================================== TASK 2 */
+
+.task2-wrap {
+	height: 200vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.lightblue {
+	background-color: lightblue;
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	border-radius: 50%;
+}
+.lightgreen {
+	background-color: lightgreen;
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	top: 10%;
+	left: 45%;
+	border-radius: 50%;
+}
+.lightcoral {
+	background-color: lightcoral;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 5%;
+	left: 80%;
+	border-radius: 50%;
 }
