@@ -1,0 +1,29 @@
+section {
+	margin: 50px 0;
+	position: relative;
+}
+section:first-child {
+	margin-top: 0;
+}
+.task-title {
+	background-color: #bbb;
+	font-size: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	margin-bottom: 20px;
+}
+.task-content {
+	padding: 20px 100px;
+}
+
+/* ====================================== TASK 1 */
+
+.box {
+    margin: 50px auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform-origin: center;
+}
