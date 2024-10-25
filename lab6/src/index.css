@@ -88,3 +88,20 @@ section:first-child {
 .task3-btn {
 	padding: 10px 20px;
 }
+
+/* ====================================== TASK 4 */
+
+.task4-wrap {
+	display: flex;
+	gap: 100px;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.task4-box {
+	width: 70px;
+	height: 70px;
+	background-color: tomato;
+	border-radius: 10px;
+}
