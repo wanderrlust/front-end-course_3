@@ -105,3 +105,21 @@ section:first-child {
 	background-color: tomato;
 	border-radius: 10px;
 }
+
+/* ====================================== TASK 5 */
+
+.task5-box {
+	margin: 20px auto;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #66ccff;
+	border-radius: 12px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+	font-size: 1.1em;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s ease;
+}
