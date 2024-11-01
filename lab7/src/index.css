@@ -19,6 +19,8 @@ html, body {
 
 }
 .user-item {
+    display: flex;
+    justify-content: space-between;
     width: 600px;
     padding: 1em;
     margin: 1em 0;
@@ -34,6 +36,26 @@ html, body {
 .strong-font {
     font-weight: bold;
     font-size: 1.3rem;
+}
+
+.user-item-tools {
+    align-self: center;
+}
+.user-update-btn {
+    font-size: 1.5rem;
+    background-color: #fff;
+    border-radius:50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.user-name input {
+    width: 150px;
+    margin-right: 10px;
+}
+.user-email input {
+    width: 300px;
 }
 
 /* ============================================= USER FORM */
@@ -58,5 +80,6 @@ html, body {
     padding: .5em;
     border-radius: .5em;
     background-color: #003b5b;
+    cursor: pointer;
     color: #fff;
 }
