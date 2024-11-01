@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers, updateUser } from "../actions/userActions";
+import { fetchUsers, updateUser, deleteUser } from "../actions/userActions";
 
 const UsersList = () => {
 	const dispatch = useDispatch();
@@ -29,6 +29,10 @@ const UsersList = () => {
 	const handleUpdateUser = (id) => {
 		dispatch(updateUser(id, updatedData));
 		setEditingUser(null);
+	};
+
+	const handleDeleteUser = (id) => {
+		dispatch(deleteUser(id));
 	};
 
 	useEffect(() => {
@@ -105,12 +109,22 @@ const UsersList = () => {
 									✔
 								</button>
 							) : (
-								<button
-									className="user-update-btn"
-									onClick={() => handleEditClick(user)}
-								>
-									🖍
-								</button>
+								<>
+									<button
+										className="user-update-btn"
+										onClick={() => handleEditClick(user)}
+									>
+										🖍
+									</button>
+									<button
+										className="user-update-btn"
+										onClick={() =>
+											handleDeleteUser(user.id)
+										}
+									>
+										🗑
+									</button>
+								</>
 							)}
 						</div>
 					</li>

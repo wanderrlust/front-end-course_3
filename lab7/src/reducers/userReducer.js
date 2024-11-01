@@ -8,6 +8,9 @@ import {
 	UPDATE_USER_REQUEST,
 	UPDATE_USER_SUCCESS,
 	UPDATE_USER_FAIL,
+	DELETE_USER_REQUEST,
+	DELETE_USER_SUCCESS,
+	DELETE_USER_FAIL,
 } from "../actions/userActions";
 
 const initialState = {
@@ -21,6 +24,7 @@ const userReducer = (state = initialState, action) => {
 		case FETCH_USERS_REQUEST:
 		case CREATE_USER_REQUEST:
 		case UPDATE_USER_REQUEST:
+		case DELETE_USER_REQUEST:
 			return { ...state, loading: true, error: null };
 
 		case FETCH_USERS_SUCCESS:
@@ -39,10 +43,17 @@ const userReducer = (state = initialState, action) => {
 					user.id === action.payload.id ? action.payload : user
 				),
 			};
+		case DELETE_USER_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				users: state.users.filter((user) => user.id !== action.payload),
+			};
 
 		case FETCH_USERS_FAIL:
 		case CREATE_USER_FAIL:
 		case UPDATE_USER_FAIL:
+		case DELETE_USER_FAIL:
 			return { ...state, loading: false, error: action.payload };
 
 		default:
