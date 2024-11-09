@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Child from "./Child";
 
 const Parent = () => {
+	console.log("Parent rendered");
 	const [counter, setCounter] = useState(0);
 	const [text, setText] = useState(
 		"Ініційований текст із стану батьківського компонента"
 	);
 	const [className, setClassName] = useState("");
 
-	const handleClick = () => {
+	const handleClick = useCallback(() => {
 		console.log("Клік на кнопці дочірнього компонента: вивід інформації з батьківського стану");
-	};
+	}, []);
 
 	return (
 		<div className="parent">
