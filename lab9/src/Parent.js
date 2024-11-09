@@ -11,7 +11,9 @@ const Parent = () => {
 	const [multiplier, setMultiplier] = useState(1);
 
 	const handleClick = useCallback(() => {
-		console.log("Клік на кнопці дочірнього компонента: вивід інформації з батьківського стану");
+		console.log(
+			"Клік на кнопці дочірнього компонента: вивід інформації з батьківського стану"
+		);
 	}, []);
 
 	const computedValue = useMemo(() => {
@@ -38,7 +40,11 @@ const Parent = () => {
 				Збільшити множник
 			</button>
 			<p>Обчислене значення (counter * multiplier): {computedValue}</p>
-			<Child onButtonClick={handleClick} text={text} class_name={className} />
+			<Child
+				onButtonClick={handleClick}
+				text={text}
+				class_name={className}
+			/>
 		</div>
 	);
 };
