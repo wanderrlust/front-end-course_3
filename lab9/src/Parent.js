@@ -6,6 +6,11 @@ const Parent = () => {
 	const [text, setText] = useState(
 		"Ініційований текст із стану батьківського компонента"
 	);
+	const [className, setClassName] = useState("");
+
+	const handleClick = () => {
+		console.log("Клік на кнопці дочірнього компонента: вивід інформації з батьківського стану");
+	};
 
 	return (
 		<div className="parent">
@@ -15,13 +20,14 @@ const Parent = () => {
 				Збільшити лічильник
 			</button>
 			<button
-				onClick={() =>
-					setText("Змінений текст через батьківський компонент")
-				}
+				onClick={() => {
+					setText("Змінений текст через батьківський компонент");
+					setClassName("parent-style");
+				}}
 			>
 				Змінити текст
 			</button>
-			<Child text={text} />
+			<Child onButtonClick={handleClick} text={text} class_name={className} />
 		</div>
 	);
 };

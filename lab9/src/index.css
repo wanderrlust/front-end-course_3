@@ -55,3 +55,9 @@
 .grandchild h3 {
 	color: #ff9800;
 }
+
+.parent-style p{
+	color: red;
+	font-weight: bold;
+	font-size: 24px;
+}
