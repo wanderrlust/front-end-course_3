@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Child from "./Child";
 
 const Parent = () => {
@@ -8,10 +8,16 @@ const Parent = () => {
 		"Ініційований текст із стану батьківського компонента"
 	);
 	const [className, setClassName] = useState("");
+	const [multiplier, setMultiplier] = useState(1);
 
 	const handleClick = useCallback(() => {
 		console.log("Клік на кнопці дочірнього компонента: вивід інформації з батьківського стану");
 	}, []);
+
+	const computedValue = useMemo(() => {
+		console.log("Обчислення виконано");
+		return counter * multiplier;
+	}, [counter, multiplier]);
 
 	return (
 		<div className="parent">
@@ -28,6 +34,10 @@ const Parent = () => {
 			>
 				Змінити текст
 			</button>
+			<button onClick={() => setMultiplier(multiplier + 1)}>
+				Збільшити множник
+			</button>
+			<p>Обчислене значення (counter * multiplier): {computedValue}</p>
 			<Child onButtonClick={handleClick} text={text} class_name={className} />
 		</div>
 	);
