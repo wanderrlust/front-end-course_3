@@ -3,9 +3,14 @@ import "./reset.css";
 import "./index.css";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "./graphql/GET_CHARACTERS";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function App() {
-	const { loading, error, data } = useQuery(GET_CHARACTERS);
+	const { loading, error, data } = useQuery(GET_CHARACTERS, {
+		onError: (error) => {
+			toast.error(`Ошибка загрузки данных: ${error.message}`);
+		},
+	});
 	const [editingCharacterId, setEditingCharacterId] = useState(null);
 	const [updatedCharacters, setUpdatedCharacters] = useState([]);
 	const [editedFields, setEditedFields] = useState({});
@@ -13,6 +18,7 @@ export default function App() {
 	React.useEffect(() => {
 		if (data) {
 			setUpdatedCharacters(data.characters.results);
+			toast.success("Дані успішно завантажені з API!");
 		}
 	}, [data]);
 
@@ -28,27 +34,32 @@ export default function App() {
 		}));
 	};
 
-	const handleUpdateCharacter = (id) => {
+	const handleUpdateCharacter = (id, name) => {
 		setUpdatedCharacters((prevCharacters) =>
 			prevCharacters.map((character) =>
 				character.id === id ? { ...editedFields } : character
 			)
 		);
 		setEditingCharacterId(null);
+		toast("Оновлення для персонажа " + name + " збережені!", {
+			icon: '✏️',
+		});
 	};
 
-	// Функция для удаления персонажа
-	const handleDeleteCharacter = (id) => {
+	const handleDeleteCharacter = (id, name) => {
 		setUpdatedCharacters((prevCharacters) =>
 			prevCharacters.filter((character) => character.id !== id)
 		);
+		toast("Персонаж " + name + " видалений!", {
+			icon: '🗑️',
+		});
 	};
 
 	if (loading) return <p>Loading...</p>;
-	if (error) return <p>Error: {error.message}</p>;
 
 	return (
 		<>
+			<Toaster position="top-right" reverseOrder={false} />
 			<h1>Characters List</h1>
 			{updatedCharacters.map((character) => (
 				<div key={character.id} className="character-card">
@@ -118,7 +129,10 @@ export default function App() {
 								<button
 									className="save"
 									onClick={() =>
-										handleUpdateCharacter(character.id)
+										handleUpdateCharacter(
+											character.id,
+											character.name
+										)
 									}
 								>
 									✔
@@ -173,7 +187,7 @@ export default function App() {
 								<button
 									className="delete"
 									onClick={() =>
-										handleDeleteCharacter(character.id)
+										handleDeleteCharacter(character.id, character.name)
 									}
 								>
 									🗑
