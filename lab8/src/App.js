@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 export default function App() {
 	const { loading, error, data } = useQuery(GET_CHARACTERS, {
 		onError: (error) => {
-			toast.error(`Ошибка загрузки данных: ${error.message}`);
+			toast.error(`Помилка завантаження даних: ${error.message}`);
 		},
 	});
 	const [editingCharacterId, setEditingCharacterId] = useState(null);
