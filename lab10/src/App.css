@@ -97,3 +97,17 @@ nav ul li a:hover {
 .user-list li:hover {
 	background-color: #e0e0e0;
 }
+
+.heavy-comp {
+    padding: 60px 25px;
+}
+
+.heavy-btn {
+	padding: 0.5em 1em;
+	background-color: #3c887c;
+	color: #fff;
+	border: 2px solid #000;
+    margin: 20px auto;
+    display: block;
+    font-size: 26px;
+}
