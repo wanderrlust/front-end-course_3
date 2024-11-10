@@ -2,8 +2,9 @@ import React from "react";
 
 const UserTable = () => {
 	return (
-		<div className="container">
-			<h1>User Table</h1>
+		<>
+			<h2>User Table</h2>
+			{console.log("User Table was rendered")}
 			<table className="table">
 				<thead>
 					<tr>
@@ -13,19 +14,16 @@ const UserTable = () => {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>John Doe</td>
-						<td>john@example.com</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Jane Smith</td>
-						<td>jane@example.com</td>
-					</tr>
+					{Array.from({ length: 15 }).map((_, index) => (
+						<tr key={index}>
+							<td>{index + 1}</td>
+							<td>User {index + 1}</td>
+							<td>user{index + 1}@example.com</td>
+						</tr>
+					))}
 				</tbody>
 			</table>
-		</div>
+		</>
 	);
 };
 

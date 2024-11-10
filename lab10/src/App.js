@@ -1,15 +1,13 @@
 import React from "react";
 import "./reset.css";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
-import UserDetails from "./components/UserDetails";
-import UserList from "./components/UserList";
-import UserTable from "./components/UserTable";
 
 const App = () => {
+	console.log("APP was rendered");
 	return (
 		<Router>
 			<>
@@ -17,22 +15,13 @@ const App = () => {
 					{console.log("NAV was rendered")}
 					<ul>
 						<li>
-							<a href="/">Home</a>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<a href="/profile">Profile</a>
+							<Link to="/profile">Profile</Link>
 						</li>
 						<li>
-							<a href="/settings">Settings</a>
-						</li>
-						<li>
-							<a href="/user-details">User Details</a>
-						</li>
-						<li>
-							<a href="/user-list">User List</a>
-						</li>
-						<li>
-							<a href="/user-table">User Table</a>
+							<Link to="/settings">Settings</Link>
 						</li>
 					</ul>
 				</nav>
@@ -41,9 +30,6 @@ const App = () => {
 					<Route path="/" element={<Home />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="/settings" element={<Settings />} />
-					<Route path="/user-details" element={<UserDetails />} />
-					<Route path="/user-list" element={<UserList />} />
-					<Route path="/user-table" element={<UserTable />} />
 				</Routes>
 			</>
 		</Router>
