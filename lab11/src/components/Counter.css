@@ -26,3 +26,8 @@
 .counter-button:hover {
 	background-color: #45a049;
 }
+
+.counter-btns {
+	display: flex;
+	gap: 20px;
+}

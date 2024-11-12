@@ -17,4 +17,20 @@ describe("Counter component", () => {
 		const counterValue = screen.getByText(/Лічильник: 1/i);
 		expect(counterValue).toBeInTheDocument();
 	});
+
+	test("Скидає значення лічильника при натисканні кнопки 'Скинути'", () => {
+		render(<Counter />);
+		const incrementButton = screen.getByRole("button", {
+			name: /Збільшити/i,
+		});
+		const resetButton = screen.getByRole("button", { name: /Скинути/i });
+
+		fireEvent.click(incrementButton);
+		let counterValue = screen.getByText(/Лічильник: 1/i);
+		expect(counterValue).toBeInTheDocument();
+
+		fireEvent.click(resetButton);
+		counterValue = screen.getByText(/Лічильник: 0/i);
+		expect(counterValue).toBeInTheDocument();
+	});
 });
