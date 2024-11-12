@@ -1,6 +1,32 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 import App from "../App";
+
+jest.mock("../components/UserProfile", () => {
+	return {
+		__esModule: true,
+		default: ({ fetchUserData }) => {
+			const mockData = {
+				name: "Іван Кучмак",
+				age: 20,
+				email: "kuchmak@gmail.com",
+			};
+			return (
+				<div>
+					<h2>Профіль користувача</h2>
+					<p>Ім'я: {mockData.name}</p>
+					<p>Вік: {mockData.age}</p>
+					<p>Email: {mockData.email}</p>
+				</div>
+			);
+		},
+		fetchUserData: jest.fn().mockResolvedValue({
+			name: "Іван Кучмак",
+			age: 20,
+			email: "kuchmak@gmail.com",
+		}),
+	};
+});
 
 test("Відображається компонент Header", () => {
 	render(<App />);
