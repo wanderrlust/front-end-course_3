@@ -1,6 +1,13 @@
 import React from 'react';
-import './reset.css';
+import './styles.css';
+import FormComponent from './FormComponent';
 
-export default function App() {
-	return <></>;
+function App() {
+	return (
+		<>
+			<FormComponent />
+		</>
+	);
 }
+
+export default App;
